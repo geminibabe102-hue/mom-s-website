@@ -1,0 +1,181 @@
+/* General Setup */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec; /* Soft pink background */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Cover Screen Container */
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Flex Layout */
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    color: #4a148c; /* Dark elegant purple */
+    font-size: 28px;
+}
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul li a {
+    text-decoration: none;
+    color: #4a148c;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* --- THE INTERACTIVE APP INTERFACE --- */
+.app-interface {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Hide the default boring little triangle icon */
+details summary::-webkit-details-marker {
+    display: none;
+}
+details summary {
+    list-style: none;
+}
+
+/* The Clickable App Button */
+.app-button {
+    background: #e91e63; /* Vibrant bright pink button */
+    color: white;
+    padding: 18px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.3);
+    transition: transform 0.2s ease, background 0.2s ease;
+    user-select: none;
+}
+.app-button:active {
+    transform: scale(0.95); /* Shrinks slightly when tapped, feels like a real app button! */
+}
+
+/* Secret Content Container */
+.secret-content {
+    background: white;
+    padding: 30px;
+    border-radius: 24px;
+    margin-top: 20px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    
+    /* Animation trigger when opened */
+    animation: slideOpen 0.4s ease-out forwards;
+}
+.secret-content h3 {
+    color: #e91e63;
+    margin-top: 0;
+}
+.secret-content p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* App-style Open Animation */
+@keyframes slideOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- PHOTOS SECTION --- */
+.photo-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+}
+.section-title {
+    color: #4a148c;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.fade-in-pic {
+    width: 280px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+} 
+
+/* 1. This centers the arch on the cover */
+.app-interface {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* 2. This sits the photos and button side-by-side */
+.arch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Space between items */
+}
+
+/* 3. THIS IS THE MAGIC MAKER: Shrinks the giant pictures! */
+.cover-pic {
+    width: 150px;       
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 4px solid white;
+    transition: transform 0.3s ease;
+}
+
+/* 4. The rainbow tilting effects */
+.outer-left {
+    transform: translateY(45px) rotate(-15deg);
+}
+.inner-left {
+    transform: translateY(15px) rotate(-5deg);
+}
+.inner-right {
+    transform: translateY(15px) rotate(5deg);
+}
+.outer-right {
+    transform: translateY(45px) rotate(15deg);
+}
