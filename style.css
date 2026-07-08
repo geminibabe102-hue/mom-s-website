@@ -179,3 +179,39 @@ details summary {
 .outer-right {
     transform: translateY(45px) rotate(15deg);
 }
+
+/* --- MOBILE SCREEN FIX --- */
+@media (max-width: 600px) {
+    /* Makes the spacing tighter so everything fits on a phone screen */
+    .arch-container {
+        gap: 10px; 
+    }
+
+    /* Shrinks the photos just for phones so they don't overlap or break the layout */
+    .cover-pic {
+        width: 75px;  
+        height: 110px;
+        border-radius: 12px;
+        border: 2px solid white;
+    }
+
+    /* Lessens the dramatic dipping so it looks clean on a small screen */
+    .outer-left {
+        transform: translateY(25px) rotate(-12deg);
+    }
+    .inner-left {
+        transform: translateY(5px) rotate(-4deg);
+    }
+    .inner-right {
+        transform: translateY(5px) rotate(4deg);
+    }
+    .outer-right {
+        transform: translateY(25px) rotate(12deg);
+    }
+    
+    /* Makes the button a little smaller to match the tiny photos */
+    .app-button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
